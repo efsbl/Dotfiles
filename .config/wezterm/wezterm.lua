@@ -6,9 +6,15 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
+config.window_padding = {
+	bottom = 0,
+	top = 5,
+	left = 5,
+	right = 5,
+}
 
 local theme = require("colors/kanagawa-dragon")
 config.colors = theme
