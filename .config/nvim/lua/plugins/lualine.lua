@@ -11,14 +11,12 @@ return {
 				disabled_filetypes = { "NvimTree" },
 			},
 			-- tabline = {
-			-- 	lualine_a = {
-			-- 		{
-			-- 			"buffers",
-			-- 			separator = { left = "", right = "" },
-			-- 			right_padding = 2,
-			-- 			symbols = { alternate_file = "" },
-			-- 		},
-			-- 	},
+			-- 	lualine_a = { "buffers" },
+			-- 	lualine_b = { "branch" },
+			-- 	lualine_c = { "filename" },
+			-- 	lualine_x = {},
+			-- 	lualine_y = {},
+			-- 	lualine_z = { "tabs" },
 			-- },
 		})
 	end,

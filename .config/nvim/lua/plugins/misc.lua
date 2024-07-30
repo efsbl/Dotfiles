@@ -78,10 +78,9 @@ return {
 		config = function()
 			-- vim.cmd.colorscheme("tokyonight-night")
 			-- You can configure highlights by doing something like
-			vim.cmd.hi("Comment gui=none")
+			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
-
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
@@ -90,8 +89,17 @@ return {
 			require("kanagawa").setup({
 				keywordStyle = { italic = false },
 			})
-			vim.cmd.colorscheme("kanagawa-dragon")
-			--vim.cmd.colorscheme("kanagawa-wave")
+			-- vim.cmd.colorscheme("kanagawa-dragon")
+			-- vim.cmd.colorscheme("kanagawa-wave")
+			-- vim.cmd.hi("Comment gui=none")
+		end,
+	},
+	{
+		"p00f/alabaster.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("alabaster")
 			vim.cmd.hi("Comment gui=none")
 		end,
 	},
