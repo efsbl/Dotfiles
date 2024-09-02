@@ -12,6 +12,7 @@ return {
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
+			local dapgo = require("dap-go")
 
 			require("nvim-dap-virtual-text").setup()
 			require("dapui").setup({})
@@ -25,10 +26,13 @@ return {
 			vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Debug Step Into" })
 			vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Debug Step Out" })
 
-			vim.keymap.set("n", "<Leader>dt", dapui.toggle, { desc = "[D]ebug [T]oggle UI" })
+			vim.keymap.set("n", "<Leader>du", dapui.toggle, { desc = "[D]ebug Toggle [U]I" })
 			vim.keymap.set("n", "<Leader>?", function()
 				dapui.eval(nil, { enter = true })
 			end, { desc = "Debug eval under cursor" })
+
+			vim.keymap.set("n", "<Leader>dt", dapgo.debug_test, { desc = "[D]ebug [T]est" })
+			vim.keymap.set("n", "<Leader>dtl", dapgo.debug_last_test, { desc = "[D]ebug [T]est [L]ast" })
 
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()

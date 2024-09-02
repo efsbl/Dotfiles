@@ -4,20 +4,6 @@ return {
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },
 
-	-- See `:help gitsigns` to understand what the configuration keys do
-	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
-		"lewis6991/gitsigns.nvim",
-		opts = {
-			signs = {
-				add = { text = "+" },
-				change = { text = "~" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-			},
-		},
-	},
-
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
@@ -39,6 +25,8 @@ return {
 
 	{ -- Autoformat
 		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
 		opts = {
 			notify_on_error = false,
 			format_on_save = {
@@ -88,10 +76,11 @@ return {
 		config = function()
 			require("kanagawa").setup({
 				keywordStyle = { italic = false },
+				transparent = true,
 			})
-			-- vim.cmd.colorscheme("kanagawa-dragon")
+			vim.cmd.colorscheme("kanagawa-dragon")
 			-- vim.cmd.colorscheme("kanagawa-wave")
-			-- vim.cmd.hi("Comment gui=none")
+			vim.cmd.hi("Comment gui=none")
 		end,
 	},
 	{
@@ -99,8 +88,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("alabaster")
-			vim.cmd.hi("Comment gui=none")
+			-- vim.cmd.colorscheme("alabaster")
+			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
 

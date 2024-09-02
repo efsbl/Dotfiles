@@ -15,6 +15,16 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.g["diagnostics_active"] = true
+vim.keymap.set("n", "<leader>td", function()
+	if vim.g.diagnostics_active then
+		vim.g.diagnostics_active = false
+		vim.diagnostic.disable()
+	else
+		vim.g.diagnostics_active = true
+		vim.diagnostic.enable()
+	end
+end, { desc = "[T]oggle [D]iagnostics" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -36,3 +46,15 @@ vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
 
 -- Do we actually need a file-tree plugin?
 vim.keymap.set("n", "<leader>pv", "<Cmd>Ex<CR>", { desc = "[P]royect [V]iew" })
+
+-- Togger relativenumber
+vim.g["relativenumber_active"] = true
+vim.keymap.set("n", "<leader>tn", function()
+	if vim.g.relativenumber_active then
+		vim.g.relativenumber_active = false
+		vim.opt.relativenumber = false
+	else
+		vim.g.relativenumber_active = true
+		vim.opt.relativenumber = true
+	end
+end, { desc = "[T]oggle relative[N]umber" })

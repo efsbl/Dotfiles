@@ -21,14 +21,14 @@ config.colors = theme
 
 -- config.color_scheme = "Github Dark (Gogh)"
 -- config.color_scheme = "Tokyo Night"
--- config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 
 config.font = wezterm.font_with_fallback({
 	-- { family = "JetBrains Mono", scale = 1.1 },
 	-- { family = "HurmitNerdFont", scale = 1.1 },
 	-- { family = "SFMono Nerd Font", scale = 1.1 },
-	{ family = "Liga SFMono Nerd Font", scale = 1.1 },
-	{ family = "Symbols Nerd Font Mono", scale = 1.1 },
+	{ family = "Liga SFMono Nerd Font", scale = 1 },
+	{ family = "Symbols Nerd Font Mono", scale = 1 },
 })
 config.font_size = 15
 
