@@ -99,9 +99,16 @@ return { -- LSP Configuration & Plugins
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			clangd = {},
-			gopls = {},
+			gopls = {
+				settings = {
+					gopls = {
+						usePlaceholders = true,
+					},
+				},
+			},
 			pyright = {},
 			tsserver = {},
+			--
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 			--
@@ -111,7 +118,7 @@ return { -- LSP Configuration & Plugins
 			-- But for many setups, the LSP (`tsserver`) will work just fine
 			-- tsserver = {},
 			--
-
+			eslint = {},
 			lua_ls = {
 				-- cmd = {...},
 				-- filetypes { ...},
@@ -157,6 +164,8 @@ return { -- LSP Configuration & Plugins
 			"gofumpt",
 			"isort",
 			"black",
+			"tsserver",
+			"eslint-lsp",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

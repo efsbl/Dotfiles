@@ -79,6 +79,9 @@ return { -- Autocompletion
 					end
 				end, { "i", "s" }),
 			}),
+			experimental = {
+				ghost_text = true, -- this feature conflict with copilot.vim's preview.
+			},
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },

@@ -1,10 +1,12 @@
 #!/bin/sh
+
 # Created by Zap installer
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 if [ "$TMUX" = "" ]; then tmux; fi
 
 export EDITOR="nvim"
+bindkey "^?" backward-delete-char
 
 HISTSIZE=10000 
 SAVEHIST=10000
@@ -57,6 +59,9 @@ source <(kubectl completion zsh)
 
 # starship
 eval "$(starship init zsh)"
+
+# export NVM_DIR="$HOME/.config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
