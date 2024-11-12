@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "gruvbox-material",
+				-- theme = "gruvbox-material",
 				-- theme = "everforest",
 				-- theme = "tokyonight",
 				icons_enabled = false,

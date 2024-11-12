@@ -8,6 +8,7 @@ return {
 	config = function()
 		require("nvim-tree").setup({})
 		vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeToggle<CR>", { desc = "[P]royect [V]iew" })
+		vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
 	end,
 }
 

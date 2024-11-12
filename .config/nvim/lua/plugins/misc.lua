@@ -45,7 +45,19 @@ return {
 			},
 		},
 	},
-
+	{
+		"aktersnurra/no-clown-fiesta.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			require("no-clown-fiesta").setup({
+				transparent = true,
+			})
+			vim.cmd.colorscheme("no-clown-fiesta")
+			vim.cmd.hi("Comment gui=none")
+		end,
+	},
+	--
 	-- {
 	-- 	"aliqyan-21/darkvoid.nvim",
 	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -59,53 +71,52 @@ return {
 	-- 		-- vim.cmd.hi("Comment gui=none")
 	-- 	end,
 	-- },
+	-- {
+	-- 	"projekt0n/github-nvim-theme",
+	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- vim.cmd.colorscheme("github_dark_default")
+	-- 		-- vim.cmd.colorscheme("github_dark_tritanopia")
+	--
+	-- 		-- You can configure highlights by doing something like
+	-- 		-- vim.cmd.hi("Comment gui=none")
+	-- 	end,
+	-- },
 
-	{
-		"projekt0n/github-nvim-theme",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			-- vim.cmd.colorscheme("github_dark_default")
-			-- vim.cmd.colorscheme("github_dark_tritanopia")
-
-			-- You can configure highlights by doing something like
-			-- vim.cmd.hi("Comment gui=none")
-		end,
-	},
-
-	{
-		"folke/tokyonight.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			-- vim.cmd.colorscheme("tokyonight-night")
-			-- You can configure highlights by doing something like
-			-- vim.cmd.hi("Comment gui=none")
-		end,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("kanagawa").setup({
-				keywordStyle = { italic = false },
-				transparent = true,
-			})
-			vim.cmd.colorscheme("kanagawa-dragon")
-			-- vim.cmd.colorscheme("kanagawa-wave")
-			vim.cmd.hi("Comment gui=none")
-		end,
-	},
-	{
-		"p00f/alabaster.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- vim.cmd.colorscheme("alabaster")
-			-- vim.cmd.hi("Comment gui=none")
-		end,
-	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- vim.cmd.colorscheme("tokyonight-night")
+	-- 		-- You can configure highlights by doing something like
+	-- 		-- vim.cmd.hi("Comment gui=none")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("kanagawa").setup({
+	-- 			keywordStyle = { italic = false },
+	-- 			transparent = true,
+	-- 		})
+	-- 		-- vim.cmd.colorscheme("kanagawa-dragon")
+	-- 		-- vim.cmd.colorscheme("kanagawa-wave")
+	--
+	-- 	end,
+	-- },
+	-- {
+	-- 	"p00f/alabaster.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- vim.cmd.colorscheme("alabaster")
+	-- 		-- vim.cmd.hi("Comment gui=none")
+	-- 	end,
+	-- },
 
 	-- Highlight todo, notes, etc in comments
 	{
