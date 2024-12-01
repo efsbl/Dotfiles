@@ -1,0 +1,12 @@
+window:
+  padding:
+    x: 10 
+    y: 10 
+
+  #decorations: "none"
+
+font:
+  normal:
+    family: "MesloLGS NF"
+  size: 14.0
+
